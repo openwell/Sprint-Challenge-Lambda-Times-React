@@ -1,6 +1,7 @@
 import React from "react";
 import Tab from "./Tab";
 import uuid from "uuid/v1";
+import propTypes from 'prop-types'
 const Tabs = props => {
   return (
     <div className="tabs">
@@ -22,6 +23,11 @@ const Tabs = props => {
     </div>
   );
 };
+Tabs.propTypes={
+  selectTabHandler: propTypes.func,
+  selectedTab: propTypes.string,
+  tab: propTypes.object
+}
 
 // Make sure to use PropTypes to validate your types!
 export default Tabs;
