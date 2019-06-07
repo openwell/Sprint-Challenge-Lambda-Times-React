@@ -29,9 +29,15 @@ Look through the application code. If you have the old Lambda Times (Applied Jav
 ## Self-Study/Essay Questions
 
 - [ ] What are PropTypes used for? Please describe why it's important to type check our data in JavaScript.
+    1. prop-types are validation checks put in place to verify the expected property types passed to a component.
+    2. Its important in Javascript because it helps to prevent error and helps in debugging
+
 - [ ] Describe a life-cycle event in React?
+    1. This are methods that are put in place by the creator of react that helps to monitor the stage of the life of a component before reaching the DOM and erased. 
 - [ ] Explain the details of a Higher Order Component?
+    1. HOC are function that wraps or accept a function and returns it.
 - [ ] What are three different ways to style components in React? Explain some of the benefits of each.
+    1. Inline CSS 2. Styled Components 2. External CSS
 
 ## Project Setup
 
