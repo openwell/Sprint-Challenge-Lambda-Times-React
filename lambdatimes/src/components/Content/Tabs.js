@@ -1,6 +1,6 @@
 import React from "react";
 import Tab from "./Tab";
-import uuid from "uuid";
+import uuid from "uuid/v1";
 const Tabs = props => {
   return (
     <div className="tabs">
