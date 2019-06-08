@@ -2,17 +2,21 @@ import React from "react";
 import Card from "./Card";
 import uuid from "uuid/v1";
 import propTypes from "prop-types";
+import "../../CSS/index.css";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
+
 const Cards = props => {
   return (
-    <div className="cards-container">
+    <TransitionGroup className="cards-container">
       {props.cards.map(elem => (
-        <Card key={uuid()} data={elem} />
+        <CSSTransition key={uuid()} classNames="fade" timeout={500}>
+          <Card key={uuid()} data={elem} />
+        </CSSTransition>
       ))
-
       /* Using the cards prop, map over the list creating a 
           new Card component for each passing the card as the only prop*/
       }
-    </div>
+    </TransitionGroup>
   );
 };
 

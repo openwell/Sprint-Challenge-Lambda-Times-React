@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import { carouselData } from "../../data";
+import "../../CSS/index.css";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
+
 // Complete this Carousel
 export default class Carousel extends Component {
   constructor(props) {
@@ -25,22 +28,39 @@ export default class Carousel extends Component {
     }));
   };
 
-  selectedImage = () => {
-    let img1 = this.state.data[this.state.index];
-    return <img src={img1} style={{ display: "block" }} alt="" />;
-  };
-
+  // selectedImage = () => {
+  //   let img1 = this.state.data[this.state.index];
+  //   let selectedImage = <img src={img1} style={{ display: "block" }} alt="" />;
+  // };
+  // random = () => Math.random();
   render() {
+    let page = {
+      position: "absolute",
+      top: 0,
+      left: 0,
+      right: 0
+    };
+    let selectedImage = (
+      <img
+        src={this.state.data[this.state.index]}
+        style={{ display: "block" }}
+        alt=""
+      />
+    );
     return (
-      <div className="carousel">
-        <div className="left-button" onClick={this.leftClick}>
-          {"<"}
-        </div>
-        {this.selectedImage()}
-        <div className="right-button" onClick={this.rightClick}>
-          {">"}
-        </div>
-      </div>
+      <TransitionGroup className="carousel">
+        <CSSTransition key={this.state.index} classNames="fade" timeout={500}>
+          <div style={page}>
+            <div className="left-button" onClick={this.leftClick}>
+              {"<"}
+            </div>
+            {selectedImage}
+            <div className="right-button" onClick={this.rightClick}>
+              {">"}
+            </div>
+          </div>
+        </CSSTransition>
+      </TransitionGroup>
     );
   }
 }

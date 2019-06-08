@@ -61,6 +61,7 @@ body {
   position: fixed;
   height: 44px;
   background-color: #333;
+  z-index: 100;
 }
 .top-bar .container {
   width: 100%;
@@ -273,6 +274,7 @@ body {
   position: relative;
   overflow: hidden;
   margin-top: 16px;
+  position: relative;
 }
 @media (min-width: 1200px) {
   .carousel {
@@ -313,4 +315,26 @@ body {
 .carousel img {
   width: 100%;
   display: none;
+}
+
+
+.fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 250ms linear 250ms;
+}
+
+/* exit */
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit.fade-exit-active {
+  opacity: 0;
+  transition: opacity 250ms linear;
+}
+.fade-exit-done {
+  opacity: 0;
 }
